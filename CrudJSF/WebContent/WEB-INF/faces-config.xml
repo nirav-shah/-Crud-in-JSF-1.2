@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+    <managed-bean>
+    <display-name>Student</display-name>
+    <managed-bean-name>studentBean</managed-bean-name>
+    <managed-bean-class>com.crud.jsf.StudentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+    <display-name>Login</display-name>
+    <from-view-id>/login.jsp</from-view-id>
+    <navigation-case>
+    <from-outcome>view</from-outcome>
+    <to-view-id>/view.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+    <from-outcome>login</from-outcome>
+    <to-view-id>/login.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+    <from-outcome>register</from-outcome>
+    <to-view-id>/register.jsp</to-view-id>
+    </navigation-case>
+    </navigation-rule>
+    
+    
+    <navigation-rule>
+    <display-name>Register</display-name>
+    <from-view-id>/register.jsp</from-view-id>
+    <navigation-case>
+    <from-outcome>login</from-outcome>
+    <to-view-id>/login.jsp</to-view-id>
+    </navigation-case>
+  	<navigation-case>
+  	<from-outcome>register</from-outcome>
+  	<to-view-id>/register.jsp</to-view-id>
+  	</navigation-case>
+    </navigation-rule>
+	
+	<navigation-rule>
+    <display-name>View</display-name>
+    <from-view-id>/view.jspx</from-view-id>
+    <navigation-case>
+    <from-outcome>view</from-outcome>
+    <to-view-id>/view.jspx</to-view-id>
+    </navigation-case>
+  	<navigation-case>
+  	<from-outcome>error</from-outcome>
+  	<to-view-id>/view.jspx</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  	<from-outcome>login</from-outcome>
+  	<to-view-id>/login.jsp</to-view-id>
+  	</navigation-case>
+  	<navigation-case>
+  	<from-outcome>editList</from-outcome>
+  	<to-view-id>/edit.jsp</to-view-id>
+  	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    <display-name>Edit</display-name>
+    <from-view-id>/edit.jsp</from-view-id>
+    <navigation-case>
+    <from-outcome>view</from-outcome>
+    <to-view-id>/view.jspx</to-view-id>
+    </navigation-case>
+    <navigation-case>
+    <from-outcome>edit</from-outcome>
+    <to-view-id>/edit.jsp</to-view-id>
+    </navigation-case>
+    
+    </navigation-rule>
+    
+    
+</faces-config>
